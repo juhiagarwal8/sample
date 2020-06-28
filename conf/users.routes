@@ -1,0 +1,6 @@
+
+GET    /                     v1.user.UserController.getAllUsers(request:Request)
+POST   /                     v1.user.UserController.createUser(request:Request)
+
+GET    /:id                 v1.user.UserController.getUserById(request:Request,id)
+PUT    /:id                 v1.user.UserController.updateUser(request:Request, id)

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="gatling"
+		module="gatling$sources_javadoc"
+		revision="0.1.0-SNAPSHOT"
+		status="integration"
+		publication="20200626133535"
+	/>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		<conf name="gatling" visibility="public" description="" extends="test"/>
+		<conf name="it" visibility="public" description="" extends="runtime"/>
+		<conf name="gatling-it" visibility="public" description="" extends="it"/>
+		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
+		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
+		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
+		<conf name="it-internal" visibility="private" description="" extends="it,optional,provided"/>
+		<conf name="plugin" visibility="private" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		<conf name="scala-tool" visibility="private" description=""/>
+	</configurations>
+	<publications>
+	</publications>
+	<dependencies>
+		<dependency org="org.fusesource.jansi" name="jansi" rev="1.12" transitive="false" conf="scala-tool->master(*),compile,compile(*),master">
+			<artifact name="jansi" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="jansi" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.hdrhistogram" name="HdrHistogram" rev="2.1.11" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="HdrHistogram" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="HdrHistogram" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.burt" name="jmespath-jackson" rev="0.4.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jmespath-jackson" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="jmespath-jackson" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.12.10" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,master(*),compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;gatling->default,master(*),compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;it->default,compile,runtime,default(compile),master;gatling-it->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,master(*),compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;it-internal->default,compile,runtime,default(compile),master;scala-tool->default,master(*),compile,runtime(*),runtime,optional,optional(default),compile(*),master" info.apiURL="https://www.scala-lang.org/api/2.12.10/">
+			<artifact name="scala-library" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="scala-library" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.thoughtworks.paranamer" name="paranamer" rev="2.8" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="paranamer" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="paranamer" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-jms" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-jms" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-jms" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling.highcharts" name="gatling-charts-highcharts" rev="3.3.1" transitive="false" conf="test->default,compile,runtime,default(compile),master;gatling->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="gatling-charts-highcharts" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-charts-highcharts" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-codec-http" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-codec-http" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-codec-http" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.jodd" name="jodd-log" rev="5.0.13" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jodd-log" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="jodd-log" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.10.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jackson-databind" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="jackson-databind" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-recorder" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-recorder" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-recorder" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-charts" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-charts" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-charts" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="javax.jms" name="javax.jms-api" rev="2.0.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="javax.jms-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="javax.jms-api" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-codec-dns" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-codec-dns" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-codec-dns" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="net.debasishg" name="redisclient_2.12" rev="3.10" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="redisclient_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="redisclient_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-redis" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-redis" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-redis" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-graphite" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-graphite" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-graphite" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-handler-proxy" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-handler-proxy" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-handler-proxy" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.10.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jackson-annotations" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="jackson-annotations" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.simpleflatmapper" name="sfm-util" rev="8.0.3" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="sfm-util" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="sfm-util" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.google.errorprone" name="error_prone_annotations" rev="2.3.3" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="error_prone_annotations" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="error_prone_annotations" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-resolver-dns" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-resolver-dns" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-resolver-dns" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-http-client" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-http-client" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-http-client" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-common" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-common" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-common" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-commons" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-commons" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-commons" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.jodd" name="jodd-core" rev="5.0.13" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jodd-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="jodd-core" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.12" rev="1.0.6" transitive="false" conf="scala-tool->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="scala-xml_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="scala-xml_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-transport-native-epoll" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-transport-native-epoll" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-transport-native-epoll" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-parser-combinators_2.12" rev="1.1.2" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-parser-combinators_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="scala-parser-combinators_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.checkerframework" name="checker-qual" rev="2.10.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="checker-qual" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="checker-qual" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.scala-logging" name="scala-logging_2.12" rev="3.9.2" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-logging_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="scala-logging_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-scalap_2.12" rev="3.6.7" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json4s-scalap_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="json4s-scalap_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="net.sf.saxon" name="Saxon-HE" rev="9.9.1-5" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="Saxon-HE" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="Saxon-HE" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-java8-compat_2.12" rev="0.9.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-java8-compat_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="scala-java8-compat_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.burt" name="jmespath-core" rev="0.4.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jmespath-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="jmespath-core" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-swing_2.12" rev="2.1.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-swing_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="scala-swing_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang" name="scala-reflect" rev="2.12.10" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master;scala-tool->master(*),compile,runtime(*),runtime,compile(*),master" info.apiURL="https://www.scala-lang.org/api/2.12.10/">
+			<artifact name="scala-reflect" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="scala-reflect" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe" name="config" rev="1.4.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="config" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="config" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-jdbc" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-jdbc" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-jdbc" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-codec-socks" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-codec-socks" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-codec-socks" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-core" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-core" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="jsonpath_2.12" rev="0.7.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jsonpath_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="jsonpath_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.bouncycastle" name="bcpkix-jdk15on" rev="1.64" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="bcpkix-jdk15on" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="bcpkix-jdk15on" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="ch.qos.logback" name="logback-classic" rev="1.2.3" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="logback-classic" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="logback-classic" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.eatthepath" name="fast-uuid" rev="0.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="fast-uuid" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="fast-uuid" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-transport-native-unix-common" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-transport-native-unix-common" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-transport-native-unix-common" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.28" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="slf4j-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="slf4j-api" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-http" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-http" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-http" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-test-framework" rev="3.3.1" transitive="false" conf="test->default,compile,runtime,default(compile),master;gatling->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="gatling-test-framework" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-test-framework" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-app" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-app" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-app" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-jackson_2.12" rev="3.6.7" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json4s-jackson_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="json4s-jackson_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.akka" name="akka-slf4j_2.12" rev="2.5.26" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="https://doc.akka.io/api/akka/2.5.26">
+			<artifact name="akka-slf4j_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="akka-slf4j_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.12" rev="1.2.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-xml_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="scala-xml_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-handler" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-handler" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-handler" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.tdunning" name="t-digest" rev="3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="t-digest" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="t-digest" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.bouncycastle" name="bcprov-jdk15on" rev="1.64" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="bcprov-jdk15on" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="bcprov-jdk15on" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.simpleflatmapper" name="lightning-csv" rev="8.0.3" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="lightning-csv" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="lightning-csv" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-ast_2.12" rev="3.6.7" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json4s-ast_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="json4s-ast_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.ben-manes.caffeine" name="caffeine" rev="2.8.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="caffeine" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="caffeine" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-buffer" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-buffer" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-buffer" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-codec" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-codec" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-codec" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-resolver" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-resolver" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-resolver" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-transport" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-transport" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-transport" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.sun.activation" name="javax.activation" rev="1.2.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="javax.activation" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="javax.activation" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.softwaremill.quicklens" name="quicklens_2.12" rev="1.4.12" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="quicklens_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="quicklens_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.pebbletemplates" name="pebble" rev="3.1.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="pebble" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="pebble" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.unbescape" name="unbescape" rev="1.1.6.RELEASE" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="unbescape" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="unbescape" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.10" transitive="false" conf="scala-tool->default,compile,runtime,optional,optional(default),master">
+			<artifact name="scala-compiler" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="scala-compiler" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="jline" name="jline" rev="2.14.6" transitive="false" conf="scala-tool->master(*),compile,compile(*),master">
+			<artifact name="jline" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="jline" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.akka" name="akka-actor_2.12" rev="2.5.26" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="https://doc.akka.io/api/akka/2.5.26">
+			<artifact name="akka-actor_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="akka-actor_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.jodd" name="jodd-lagarto" rev="5.0.13" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jodd-lagarto" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="jodd-lagarto" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.gatling" name="gatling-netty-util" rev="3.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gatling-netty-util" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="gatling-netty-util" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.scopt" name="scopt_2.12" rev="3.7.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scopt_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="scopt_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-pool2" rev="2.6.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-pool2" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="commons-pool2" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-sbt" name="test-interface" rev="1.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="test-interface" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="test-interface" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-core_2.12" rev="3.6.7" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json4s-core_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="json4s-core_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="ch.qos.logback" name="logback-core" rev="1.2.3" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="logback-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="logback-core" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-codec-http2" rev="4.1.42.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-codec-http2" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-codec-http2" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.typelevel" name="spire-macros_2.12" rev="0.16.2" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="spire-macros_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="spire-macros_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.10.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jackson-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="jackson-core" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-tcnative-boringssl-static" rev="2.0.26.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty-tcnative-boringssl-static" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="netty-tcnative-boringssl-static" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.suzaku" name="boopickle_2.12" rev="1.3.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="boopickle_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<artifact name="boopickle_2.12" type="doc" ext="jar" conf="*" e:classifier="javadoc"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+	</dependencies>
+</ivy-module>

@@ -1,0 +1,14 @@
+2020-06-28 00:58:50,182 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-7 - Database [default] initialized
+2020-06-28 00:58:50,198 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
+2020-06-28 00:58:50,314 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-7 - datasource [default] bound to JNDI as DefaultDS
+2020-06-28 00:58:50,381 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-4 - Slf4jLogger started
+2020-06-28 00:58:51,116 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev) (no global state)
+2020-06-28 01:01:50,709 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-7 - Shutting down connection pool.
+2020-06-28 01:01:51,415 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-19 - Database [default] initialized
+2020-06-28 01:01:51,416 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-19 - Creating Pool for datasource 'default'
+2020-06-28 01:01:51,432 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-19 - datasource [default] bound to JNDI as DefaultDS
+2020-06-28 01:01:51,481 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-6 - Slf4jLogger started
+2020-06-28 01:01:51,820 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-19 - Application started (Dev) (no global state)
+2020-06-28 01:02:07,533 [WARN] from com.datastax.oss.driver.internal.core.util.concurrent.UncaughtExceptions in s2-io-2 - Uncaught exception in scheduled task (ClosedChannelException: null)
+2020-06-28 11:12:12,239 [WARN] from com.zaxxer.hikari.pool.HikariPool in HikariPool-2 housekeeper - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=9h55m50s527ms488µs600ns).
+2020-06-28 11:14:23,817 [WARN] from com.zaxxer.hikari.pool.HikariPool in HikariPool-2 housekeeper - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=1m47s216ms843µs400ns).

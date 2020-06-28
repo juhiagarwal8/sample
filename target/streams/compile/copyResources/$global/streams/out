@@ -1,0 +1,7 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Juhi Agarwal\git\play-samples\conf\application.conf,C:\Users\Juhi Agarwal\git\play-samples\target\scala-2.13\classes\application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Juhi Agarwal\git\play-samples\conf\config.properties,C:\Users\Juhi Agarwal\git\play-samples\target\scala-2.13\classes\config.properties)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Juhi Agarwal\git\play-samples\conf\logback.xml,C:\Users\Juhi Agarwal\git\play-samples\target\scala-2.13\classes\logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Juhi Agarwal\git\play-samples\conf\META-INF,C:\Users\Juhi Agarwal\git\play-samples\target\scala-2.13\classes\META-INF)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Juhi Agarwal\git\play-samples\conf\routes,C:\Users\Juhi Agarwal\git\play-samples\target\scala-2.13\classes\routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Juhi Agarwal\git\play-samples\conf\users.routes,C:\Users\Juhi Agarwal\git\play-samples\target\scala-2.13\classes\users.routes)[0m
