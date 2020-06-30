@@ -11,10 +11,9 @@ lazy val root = (project in file("."))
       "io.dropwizard.metrics" % "metrics-core" % "4.1.1",
       "com.palominolabs.http" % "url-builder" % "1.1.0",
       "net.jodah" % "failsafe" % "2.3.1",
+      "org.apache.commons" % "commons-collections4" % "4.4",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.10.1",
-      "com.datastax.oss" % "java-driver-core" % "4.6.1",
-      "com.datastax.oss" % "java-driver-query-builder" % "4.6.1",
-      "com.datastax.oss" % "java-driver-mapper-runtime" % "4.6.1",
+      "com.datastax.cassandra" % "cassandra-driver-core" % "3.7.0"
     ),
     PlayKeys.externalizeResources := false,
     testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v")),

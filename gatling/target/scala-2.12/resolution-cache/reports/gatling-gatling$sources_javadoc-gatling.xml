@@ -7,7 +7,7 @@
 		revision="0.1.0-SNAPSHOT"
 		conf="gatling"
 		confs="compile, runtime, test, provided, optional, gatling, it, gatling-it, compile-internal, runtime-internal, test-internal, it-internal, plugin, pom, scala-tool"
-		date="20200626133535"/>
+		date="20200629231745"/>
 	<dependencies>
 		<module organisation="io.gatling" name="gatling-test-framework">
 			<revision name="3.3.1" status="release" pubdate="20191105160420" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://gatling.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="46">
