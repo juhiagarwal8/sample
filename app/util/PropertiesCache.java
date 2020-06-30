@@ -14,10 +14,8 @@ public class PropertiesCache {
 	Logger logger = LoggerFactory.getLogger(PropertiesCache.class);
 	private final String fileName = "config.properties";
 	private final Properties configProp = new Properties();
-	public final Map<String, Float> attributePercentageMap = new ConcurrentHashMap<>();
 	private static PropertiesCache propertiesCache = null;
 
-	/** private default constructor */
 	private PropertiesCache() {
 		InputStream in = this.getClass().getClassLoader().getResourceAsStream(fileName);
 		try {
@@ -29,7 +27,6 @@ public class PropertiesCache {
 
 	public static PropertiesCache getInstance() {
 
-		// change the lazy holder implementation to simple singleton implementation ...
 		if (null == propertiesCache) {
 			synchronized (PropertiesCache.class) {
 				if (null == propertiesCache) {

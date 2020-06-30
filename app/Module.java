@@ -10,6 +10,10 @@ import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.Slf4jReporter;
 import com.google.inject.AbstractModule;
 
+import cassandra.connection.CassandraConnectionManager;
+import cassandra.connection.CassandraConnectionManagerImpl;
+import util.CassandraOperation;
+import util.CassandraOperationImpl;
 import v1.user.UserRepository;
 import v1.user.UserRepositoryImpl;
 
@@ -25,8 +29,11 @@ public class Module extends AbstractModule {
 
 	@Override
 	public void configure() {
+		bind(ApplicationStart.class).asEagerSingleton();
 		bind(MetricRegistry.class).toProvider(MetricRegistryProvider.class).asEagerSingleton();
-		bind(UserRepository.class).toProvider(UserRepositoryImpl.class).asEagerSingleton();
+		bind(UserRepository.class).to(UserRepositoryImpl.class);
+		bind(CassandraOperation.class).to(CassandraOperationImpl.class);
+		bind(CassandraConnectionManager.class).to(CassandraConnectionManagerImpl.class);
 	}
 }
 

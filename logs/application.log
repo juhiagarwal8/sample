@@ -1,14 +1,92 @@
-2020-06-28 00:58:50,182 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-7 - Database [default] initialized
-2020-06-28 00:58:50,198 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
-2020-06-28 00:58:50,314 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-7 - datasource [default] bound to JNDI as DefaultDS
-2020-06-28 00:58:50,381 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-4 - Slf4jLogger started
-2020-06-28 00:58:51,116 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev) (no global state)
-2020-06-28 01:01:50,709 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-7 - Shutting down connection pool.
-2020-06-28 01:01:51,415 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-19 - Database [default] initialized
-2020-06-28 01:01:51,416 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-19 - Creating Pool for datasource 'default'
-2020-06-28 01:01:51,432 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-19 - datasource [default] bound to JNDI as DefaultDS
-2020-06-28 01:01:51,481 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-6 - Slf4jLogger started
-2020-06-28 01:01:51,820 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-19 - Application started (Dev) (no global state)
-2020-06-28 01:02:07,533 [WARN] from com.datastax.oss.driver.internal.core.util.concurrent.UncaughtExceptions in s2-io-2 - Uncaught exception in scheduled task (ClosedChannelException: null)
-2020-06-28 11:12:12,239 [WARN] from com.zaxxer.hikari.pool.HikariPool in HikariPool-2 housekeeper - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=9h55m50s527ms488µs600ns).
-2020-06-28 11:14:23,817 [WARN] from com.zaxxer.hikari.pool.HikariPool in HikariPool-2 housekeeper - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=1m47s216ms843µs400ns).
+2020-06-30 02:30:47,778 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-8 -
+				Database [default] initialized
+2020-06-30 02:30:47,808 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-8 -
+				Creating Pool for datasource 'default'
+2020-06-30 02:30:47,921 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-8 -
+				datasource [default] bound to JNDI as DefaultDS
+2020-06-30 02:30:47,978 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-6 -
+				Slf4jLogger started
+2020-06-30 02:30:49,248 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-8 -
+				
+
+! @7ga6c5oc0 - Internal server error, for (GET) [/v1/users] ->
+ 
+play.api.UnexpectedException: Unexpected exception[CreationException: Unable to create injector, see the following errors:
+
+1) Error injecting constructor, java.lang.NoClassDefFoundError: com/codahale/metrics/JmxReporter
+  at ApplicationStart.<init>(ApplicationStart.java:9)
+  at Module.configure(Module.java:32) (via modules: com.google.inject.util.Modules$OverrideModule -> Module)
+  while locating ApplicationStart
+
+1 error]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:301)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:191)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1285)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:502)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:600)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:769)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:784)
+	at akka.actor.Actor.aroundReceive(Actor.scala:535)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:533)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:691)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:575)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:545)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+Caused by: com.google.inject.CreationException: Unable to create injector, see the following errors:
+
+1) Error injecting constructor, java.lang.NoClassDefFoundError: com/codahale/metrics/JmxReporter
+  at ApplicationStart.<init>(ApplicationStart.java:9)
+  at Module.configure(Module.java:32) (via modules: com.google.inject.util.Modules$OverrideModule -> Module)
+  while locating ApplicationStart
+
+1 error
+	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:554)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:188)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:111)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:155)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/codahale/metrics/JmxReporter
+	at com.datastax.driver.core.Metrics.<init>(Metrics.java:146)
+	at com.datastax.driver.core.Cluster$Manager.init(Cluster.java:1501)
+	at com.datastax.driver.core.Cluster.getMetadata(Cluster.java:451)
+	at cassandra.connection.CassandraConnectionManagerImpl.createCassandraConnection(CassandraConnectionManagerImpl.java:75)
+	at cassandra.connection.CassandraConnectionManagerImpl.createConnection(CassandraConnectionManagerImpl.java:40)
+	at cassandra.connection.DBUtil.checkCassandraDbConnections(DBUtil.java:35)
+	at ApplicationStart.checkCassandraConnections(ApplicationStart.java:14)
+	at ApplicationStart.<init>(ApplicationStart.java:10)
+	at ApplicationStart$$FastClassByGuice$$cd26e512.newInstance(<generated>)
+	at com.google.inject.internal.DefaultConstructionProxyFactory$FastClassProxy.newInstance(DefaultConstructionProxyFactory.java:89)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:114)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:91)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:306)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:168)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:39)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:213)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:184)
+	... 32 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.codahale.metrics.JmxReporter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 50 common frames omitted
+2020-06-30 10:10:32,473 [WARN] from com.zaxxer.hikari.pool.HikariPool in HikariPool-1 housekeeper -
+				HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h36m44s497ms251µs400ns).

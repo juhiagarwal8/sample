@@ -6,31 +6,28 @@ import java.util.concurrent.CompletionStage;
 import java.util.stream.Stream;
 
 import javax.inject.Inject;
-import javax.inject.Provider;
-import javax.inject.Singleton;
 
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import net.jodah.failsafe.CircuitBreaker;
-import util.DBQueries;
+import util.CassandraOperation;
 
 /**
  * A repository that provides a non-blocking API with a custom execution context
  * and circuit breaker.
  */
-@Singleton
-public class UserRepositoryImpl implements UserRepository, Provider<UserRepository> {
+public class UserRepositoryImpl implements UserRepository {
 	private static UserExecutionContext ec;
-	private static DBQueries db;
+	private static CassandraOperation co;
 	private Logger logger = LoggerFactory.getLogger(UserRepositoryImpl.class);
 	private final CircuitBreaker<Optional<UserData>> circuitBreaker = new CircuitBreaker<Optional<UserData>>()
 			.withFailureThreshold(1).withSuccessThreshold(3);
 
 	@Inject
-	public UserRepositoryImpl(UserExecutionContext ec, DBQueries db) {
+	public UserRepositoryImpl(UserExecutionContext ec, CassandraOperation co) {
 		UserRepositoryImpl.ec = ec;
-		UserRepositoryImpl.db = db;
+		UserRepositoryImpl.co = co;
 	}
 
 	@Override
@@ -39,7 +36,13 @@ public class UserRepositoryImpl implements UserRepository, Provider<UserReposito
 	}
 
 	private Stream<UserData> select() {
-		return db.getAllUsers().stream();
+		try {
+			return co.getAllRecords("sample", "user").stream();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	@Override
@@ -57,11 +60,5 @@ public class UserRepositoryImpl implements UserRepository, Provider<UserReposito
 	public CompletionStage<Optional<UserData>> update(Long id, UserData postData) {
 
 		return null;
-	}
-
-	@Override
-	public UserRepository get() {
-		final UserRepositoryImpl registry = new UserRepositoryImpl(ec, db);
-		return registry;
 	}
 }
