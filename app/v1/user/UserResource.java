@@ -34,7 +34,7 @@ public class UserResource {
 	}
 
 	public UserResource(UserData data, String link) {
-		this.id = data.id.toString();
+		this.id = String.valueOf(data.id);
 		this.name = data.name;
 		this.phone = data.phone;
 		this.email = data.email;

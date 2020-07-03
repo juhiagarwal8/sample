@@ -15,6 +15,13 @@ public class Response implements Serializable, Cloneable {
 		return result;
 	}
 
+	public Response() {
+	}
+
+	public Response(Response rs) {
+		this.result = rs.getResult();
+	}
+
 	/**
 	 * @param key
 	 *            String

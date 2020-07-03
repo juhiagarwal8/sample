@@ -25,6 +25,22 @@
 
 	<appender name="STDOUT"
 		class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<encoder>
+			<pattern>[%date{ISO8601}] [%level] %logger{36}:%line [%marker]
+				[%thread] [%mdc{reqId}] - %msg %n
+			</pattern>
+			<!--to print whole Mapped Diagnostic Context (MDC) properties( for eg: 
+				the actor’s path, the full address of the ActorSystem) in the logs refer 
+				this link https://doc.akka.io/docs/akka/current/typed/logging.html#mdc -->
+			<!--[%mdc] will print all akka variables akkaSource, akkaAddress, akkaTags, 
+				sourceActorSystem. for more info refer this link https://doc.akka.io/docs/akka/current/typed/logging.html#mdc-values -->
+		</encoder>
+	</appender>
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<pattern>%coloredLevel %logger{15} - %message%n%xException{10}
 			</pattern>
@@ -48,7 +64,7 @@
 	<logger name="akka" level="INFO" />
 
 
-	<root level="WARN">
+	<root level="INFO">
 		<appender-ref ref="ASYNCFILE" />
 		<appender-ref ref="ASYNCSTDOUT" />
 	</root>

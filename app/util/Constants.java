@@ -2,29 +2,10 @@ package util;
 
 public interface Constants {
 
-	// CASSANDRA CONFIG PROPERTIES
-	public static final String CONSISTENCY_LEVEL = "consistency_level";
-	public static final String CORE_CONNECTIONS_PER_HOST_FOR_LOCAL = "coreConnectionsPerHostForLocal";
-	public static final String CORE_CONNECTIONS_PER_HOST_FOR_REMOTE = "coreConnectionsPerHostForRemote";
-	public static final String MAX_CONNECTIONS_PER_HOST_FOR_LOCAl = "maxConnectionsPerHostForLocal";
-	public static final String MAX_CONNECTIONS_PER_HOST_FOR_REMOTE = "maxConnectionsPerHostForRemote";
-	public static final String MAX_REQUEST_PER_CONNECTION = "maxRequestsPerConnection";
-	public static final String HEARTBEAT_INTERVAL = "heartbeatIntervalSeconds";
-	public static final String POOL_TIMEOUT = "poolTimeoutMillis";
-	public static final String CONTACT_POINT = "contactPoint";
-	public static final String PORT = "port";
-	public static final String QUERY_LOGGER_THRESHOLD = "queryLoggerConstantThreshold";
-	public static final String CASSANDRA_PROPERTIES_FILE = "cassandra.config.properties";
-
-	// CONSTANT
-	public static final String COURSE_ID = "courseId";
 	public static final String USER_ID = "userId";
-	public static final String CONTENT_ID = "contentId";
 	public static final String IDENTIFIER = "id";
 	public static final String SUCCESS = "SUCCESS";
 	public static final String RESPONSE = "response";
-	public static final String SESSION_IS_NULL = "cassandra session is null for this ";
-	public static final String CLUSTER_IS_NULL = "cassandra cluster value is null for this ";
 	public static final String QUE_MARK = "?";
 	public static final String INSERT_INTO = "INSERT INTO ";
 	public static final String OPEN_BRACE_WITH_SPACE = " (";
@@ -65,4 +46,26 @@ public interface Constants {
 	public static final String OBJECT_TYPE = "objectType";
 	public static final String INSERT = "insert";
 	public static final String STANDALONE_MODE = "standalone";
+
+	public static final String USER_GROUP = "user_group";
+	public static final String TABLENAME = "user";
+	public static final String USERID = "userid";
+	public static final String KEYSPACE = "sample";
+	public static final String GET_RECORD_BY_IDENTIFIER = "getRecordByIdentifier";
+	public static final String STRING = "';";
+	public static final String WHERE_ID_ = " where id='";
+	public static final String SELECT_FROM = "select * from ";
+	public static final String CASSANDRA_SERVICE_UPSERT_RECORD_METHOD_STARTED_AT = "Cassandra Service upsertRecord method started at == {}";
+	public static final String UPSERT_RECORD = "upsertRecord";
+	public static final String LOCALHOST = "localhost";
+	public static final String GET_ALL_RECORDS = "getAllRecords";
+	public static final String PHONE = "phone";
+	public static final String EMAIL = "email";
+	public static final String NAME = "name";
+	public static final String PASSWORD = "password";
+	public static final String USERNAME = "username";
+	public static final String EXCEPTION_OCCURED_WHILE_INSERTING_RECORD_TO = "Exception occured while inserting record to ";
+	public static final String INSERT_INTO_ = "insert into sample.user_group (\"id\",\"userid\",\"groupid\") values(";
+	public static final String ALLOW_FILTERING = " ALLOW FILTERING;";
+	public static final String SELECT_FROM_SAMPLE_USER_GROUP_WHERE_GROUPID = "select * from sample.user_group where groupid=";
 }

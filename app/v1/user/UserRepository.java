@@ -1,16 +1,21 @@
 package v1.user;
 
-import java.util.Optional;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Stream;
 
+import util.Response;
+
 public interface UserRepository {
 
-	CompletionStage<Stream<UserData>> getAllUsers();
+	CompletionStage<Stream<UserData>> getAllUsers() throws Exception;
 
-	CompletionStage<UserData> createUser(UserData postData);
+	CompletionStage<Response> createUser(UserData postData) throws Exception;
 
-	CompletionStage<Optional<UserData>> getUserById(Long id);
+	CompletionStage<Response> update(int id, UserData postData) throws Exception;
 
-	CompletionStage<Optional<UserData>> update(Long id, UserData postData);
+	CompletionStage<Stream<UserData>> getAllUserFromGroup(String id) throws Exception;
+
+	CompletionStage<Response> addUserToGroup(String userId, String groupId, String id) throws Exception;
+
+	CompletionStage<UserData> getUserById(String id) throws Exception;
 }

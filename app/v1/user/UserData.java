@@ -1,6 +1,10 @@
 package v1.user;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Data returned from the database
@@ -18,7 +22,7 @@ public class UserData {
 		this.email = email;
 	}
 
-	public UserData(Long id, String name, String phone, String email) {
+	public UserData(String id, String name, String phone, String email) {
 		this.id = id;
 		this.name = name;
 		this.phone = phone;
@@ -27,7 +31,7 @@ public class UserData {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	public Long id;
+	public String id;
 	public String name;
 	public String phone;
 	public String email;
